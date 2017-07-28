@@ -15,7 +15,7 @@
 			<!-- Font Awesome-->
 			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<!-- My own css-->
-			<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+			<link rel="stylesheet" type="text/css" href="./styles.css">
 		<!-- /CSS -->
 
 		<!-- JavaScript -->
@@ -26,7 +26,7 @@
 			<!-- Twitter Bootstrap -->
 			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 			<!-- My own JavaScript-->
-			<script type="text/javascript" src="hangman.js"></script>
+			<script type="text/javascript" src="ajax.js"></script>
 		<!-- /JavaScript --> 
 	<title>NYT Search</title>
 </head>
@@ -34,19 +34,52 @@
 	<div class="container">
 		<!-- Page Header-->
 		<div class="row">
-			<div class="col-12 page-header">
-				<h1>New York Times Search</h1>
+			<div class="col-12 text-center jumbotron page-header">
+				<h1><i class="fa fa-newspaper-o" aria-hidden="true"></i> New York Times Search</h1>
 			</div>
 		</div>
 	
 		<!-- Search Form-->
 		<div class="row">
-			
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header"><i class="fa fa-list-alt" aria-hidden="true"></i> Search Parameters</div>
+					<div class="card-block">
+						<form>
+							<div class="form-group">
+								<label for="searchTerm">Search Term: </label>
+								<input type="text" id="searchTerm" name="searchTerm" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="numRecords">Number of records to retrive: </label>
+								<input type="text" id="numRecords" name="numRecords" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="startYear">Start Year (Optional): </label>
+								<input type="text" id="startYear" name="startYear" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="endYear">End Year (Optional): </label>
+								<input type="text" id="endYear" name="endYear" class="form-control">
+							</div>
+							<button type="submit" id="submitForm" class="btn btn-muted"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+							<button type="submit" id="clearResults" class="btn btn-muted"><i class="fa fa-trash" aria-hidden="true"></i> Clear Results</button>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
-
+		<br/>
 		<!-- Results -->
-		<div class="row">
-			
+		<div class="row	">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header"><i class="fa fa-th" aria-hidden="true"></i> Top Articles</div>
+					<div id="results-body" class="card-block">
+						
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
